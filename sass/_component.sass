@@ -1,0 +1,197 @@
+.left,.right
+  padding: 0 16px
+.nw-btn
+  padding: 10px
+  font-size: 18px
+  font-weight: 800
+  &:hover
+    text-decoration: none
+
+  &.nw-btn-red-bg
+    color: #fff
+    background-color: $nw-red
+
+  &.nw-btn-full-width
+    display: block
+
+  &.nw-btn-white-bg
+    color: $nw-red
+    background-color: #fff
+    &.nw-btn-arrow
+      &::after
+        border-color: $nw-red
+
+  &.nw-btn-hover-black
+    &::before
+      @include arrow-border(#999,'2')
+    &:hover
+      background-color: #000
+      color: #fff
+      &::before
+        @include arrow-border($nw-red,'2')
+    
+  &.nw-btn-arrow
+    position: relative
+    &::after
+      content: ''
+      display: inline-block
+      width: 30px
+    &::before
+      content: ''
+      display: block
+      height: 10px
+      width: 10px
+      position: absolute
+      top: 50%
+      right: 0
+      transform: rotate(-45deg) translateY(-150%)
+      transform-origin: bottom right
+// nw-btn default for easy changing below
+.nw-btn-arrow
+  &::before
+    @include arrow-border('',2)
+
+.hamburger
+  margin: -4px 0
+  &:hover
+    cursor: pointer
+  .line
+    width: 30px
+    height: 4px
+    background-color: #ecf0f1
+    display: block
+    margin: 4px auto
+    transform-origin: 5px
+    -webkit-transition: all 0.3s ease-in-out
+    -o-transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out
+  &.is-active
+    .line:nth-child(2)
+      opacity: 0
+    .line:nth-child(1)
+      -webkit-transform: translateY(1px) rotate(45deg)
+      -ms-transform: translateY(1px) rotate(45deg)
+      -o-transform: translateY(1px) rotate(45deg)
+      transform: translateY(1px) rotate(45deg)
+    .line:nth-child(3)
+      -webkit-transform: translateY(-1px) rotate(-45deg)
+      -ms-transform: translateY(-1px) rotate(-45deg)
+      -o-transform: translateY(-1px) rotate(-45deg)
+      transform: translateY(-1px) rotate(-45deg)
+
+.nw-block
+  margin-bottom: 16px
+  .block-title
+    font-size: 16px
+    color: #03030366
+.sponsor-block
+  margin-bottom: 16px
+
+.container.not-grid
+  padding: 0
+  > .row
+    margin: 0
+.no-padding
+    padding: 0 !important
+.no-margin
+  margin: 0 !important
+@media only screen and (min-width: 768px)
+  .no-padding-md
+    padding: 0 !important
+  .no-margin-md
+    margin: 0 !important
+
+.nw-articles
+  .img-tags-wrapper
+    position: relative
+    margin-bottom: 12px
+    picture
+      position: relative
+      display: block
+      padding-bottom: 61.59%
+      overflow: hidden
+      img
+        position: absolute
+        top: 0
+        bottom: 0
+        width: 100%
+    .tags
+      position: absolute
+      bottom: 0
+      padding: 6px 12px
+      background: #ffffffe6
+      a
+        font-weight: 700
+        color: $nw-red
+        &:hover
+          text-decoration: none
+      &.blue
+        a
+          color: #3581f4
+  h3
+    font-size: 22px
+    line-height: 24px
+    font-weight: 700
+  p
+    font-family: Arial, Helvetica, sans-serif
+    font-size: 13px
+    line-height: 18px
+    color: #333
+
+  &.nw-articles-img-float-left
+    .img-tags-wrapper
+      width: 256px
+      float: left
+      margin-right: 16px
+    
+    h3
+      font-size: 17px
+      line-height: 20px
+  &.nw-articles-padding-description
+    padding: 0 12px
+    .tags
+      left: -12px
+    picture
+      margin: 0 -12px
+  &.nw-articles-bordered
+    border: 1px solid #eee
+  .tags-end
+    display: inline
+    background-color: #c2d4d7
+    padding: 4px 8px
+    font-size: 13px
+    &:hover
+      background-color: #000
+      color: #fff
+
+.clearfix
+  &::after
+  content: ''
+  display: block
+  clear: both
+.opinion-card
+  min-height: 68px
+  padding: 12px 0
+  border-bottom: 1px solid #ccc
+  padding-left: 78px
+  position: relative
+  picture
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+  h3
+    font-size: 17px
+    font-weight: 700
+    a:hover
+      color: $nw-red
+      text-decoration: none
+  .byline
+    font-size: 14px
+    font-weight: 700
+    color: #555
+
+@media only screen and (min-width: 768px)
+  .nw-articles.nw-articles-img-float-left
+    .img-tags-wrapper
+      width: 135px

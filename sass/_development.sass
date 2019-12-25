@@ -1,0 +1,85 @@
+@mixin random-bgr()
+  background: rgb(random(255), random(255), random(255))
+
+  
+@mixin random-bgr-ch($child)
+  @for $i from 1 through $child
+    &:nth-child(#{$i})
+      background: rgb(random(255), random(255), random(255))
+
+.outermost
+  height: 9999px // for testing .top-menu
+
+#top-menu
+  //background-color: #f72210
+
+.main-news-wrapper
+  /*.row
+    > div
+      min-height: 10px
+      @include random-bgr-ch(100)
+    */
+.center .row > *, #featured, .sponsor-block, .right > div
+  border: 2px solid #eee
+#top-story
+  height: 486px
+#more-story
+  height: 1487px
+#cultural-travel
+  height: 874px
+#featured
+  height: 1585px
+.sponsor-block
+  height: 1600px
+.sponsor-block
+  background: teal
+#opinion
+  height: 600px
+#latest
+  height: 875px
+.magazine-cover
+  height: 425.06px
+  background: blue
+
+.in-the-magazine-header
+  height: 36px
+  margin-bottom: 16px
+  background: #fc324f
+.magazine-block
+  height: 376px
+  background: #aaffcc
+
+#editor-picks, #us-news
+  > div:first-child ~ div
+    position: relative
+    height: 100px
+    &::before
+      content: ''
+      background: black
+      position: absolute
+      top: 3px
+      bottom: 3px
+      right: 3px
+      left: 3px
+  &#us-news
+    > div:last-child
+      height: auto
+      &::before
+        display: none
+      > ul
+        li
+          position: relative
+          height: 100px
+          &::before
+            content: ''
+            background: black
+            position: absolute
+            top: 3px
+            bottom: 3px
+            right: 3px
+            left: 3px
+#nw-products
+  .row
+    > div
+      height: 100px
+      background: yellow

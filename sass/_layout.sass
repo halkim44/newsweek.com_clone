@@ -1,0 +1,236 @@
+$main-nav-l-lg: 84.31372549019608%
+.outermost
+  margin: 0 auto
+  margin-top: 50px
+  max-width: 1310px
+
+/* **START OF TOP MENU** */
+#top-menu
+  background-color: $nw-red
+  height: 50px
+  padding: 15px
+  z-index: 5
+
+  .logo
+    a
+      background-image: url('../img/newsweek-logo-black-and-white.png')
+      background-position: left
+      background-repeat: no-repeat
+      background-size: 130px 700%
+      display: block
+      height: 100%
+      min-width: 160px
+
+  .date-wrapper
+    display: none
+
+  .row
+    height: 100%
+
+    > div
+      height: 20px
+
+.subscribe-auth-btn
+  margin: 0 20px
+
+  ul
+    display: flex
+
+    a
+      line-height: 100%
+
+    .nw-btn
+      padding: 2px 8px
+
+#main-nav
+  background: #fff
+  bottom: 0
+  position: fixed
+  right: -224px //including shadow
+  top: 50px
+  transition: all ease .4s
+  width: 220px
+  z-index: 4
+
+  &::before
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, .1) 90%)
+    content: ''
+    height: 100%
+    position: absolute
+    right: 100%
+    width: 4px
+
+  .nw-btn
+    padding: 3px 16px
+
+  .main-nav-search
+    border: none
+    font-size: 18px
+    outline: none
+    padding: 3px 16px
+
+  // for hiding main nav
+.show-main-menu
+
+  #main-nav
+    right: 0
+/* **END OF TOP MENU** */
+
+  /* **START OF MAIN NEWS** */
+
+.main-news-wrapper
+  padding-top: 16px
+  .content
+    height: auto
+    > *
+      width: 100%
+.center
+  width: 100%
+  .row
+    > *
+      padding: 0
+
+.col-w-pcent
+  padding: 0 16px
+
+#more-story
+  .article-wrapper
+    padding: 16px 0
+    border-top: 1px solid #ddd
+
+#cultural-travel
+  background-color: #f4f5f7
+  .block-title
+    padding: 8px 12px
+    margin: 0
+  .article-wrapper
+    margin-bottom: 30px
+  h3
+    font-family: Georgia, 'Times New Roman', Times, serif
+    font-weight: 100
+  p
+    font-size: 15px
+    color: #27272780
+  a:hover
+    text-decoration: none
+.sponsor-block
+  .article-wrapper
+    margin-bottom: 30px
+
+  /* **END OF MAIN NEWS** */
+  /* **START OF MAGAZINE PREVIEW**  */
+  /* **END OF MAGAZINE PREVIEW**  */
+
+@media only screen and (max-width: 480px)
+  .subscribe-auth-btn
+
+    ul
+      margin-top: -2px
+
+      .nw-btn
+        font-size: 14px
+        line-height: 20px
+        padding: 6px 2px
+
+        &::before
+          display: none
+
+        &::after
+          display: none
+
+@media only screen and (min-width: 768px)
+  .col-w-pcent
+    width: 55%
+@media only screen and (min-width: 992px)
+  .col-w-pcent
+    width: 40%
+
+  .j-top-menu-full
+    margin-top: 0
+    position: relative
+
+    #top-menu
+      height: 108px
+      position: static
+
+      .row
+        padding-bottom: 16px
+        align-items: flex-end
+
+      .date-wrapper
+        display: block
+        color: #fff
+
+      .hamburger
+        display: none
+
+      .subscribe-auth-btn
+        margin: 0
+
+      .logo
+        height: 60px
+        margin-bottom: -6px
+
+        a
+          background-size: cover
+          width: 415px
+          margin: 0 auto
+
+      margin-bottom: 47px
+
+      #main-nav
+        background: transparent
+        border-bottom: 2px solid #eee
+        bottom: auto
+        display: flex
+        flex-direction: row-reverse
+        justify-content: flex-end
+        left: 0
+        position: absolute
+        right: 0
+        top: 96px
+        transition-duration: 0s
+        width: 100%
+
+        form
+          position: absolute
+          height: 100%
+          width: 100%
+          input
+            position: absolute
+            right: 0
+            line-height: 59px
+            padding: 0 75px 0 0
+            background: linear-gradient(225deg, transparent 45px, #fff 0)
+            width: 16%
+            transition: width ease .1s
+            z-index: 3
+            &:focus
+              padding-left: 16px
+              width: 100%
+        ul
+          background: #fff
+          display: flex
+          margin-right: 160px
+          padding: 18px 0
+          width: $main-nav-l-lg
+          
+          li
+            border-right: 1px solid #ccc
+            flex: auto
+            padding: 0
+            text-align: center
+            z-index: 2
+
+            a.nw-btn
+              font-size: 21px
+              line-height: 110%
+              padding: 0
+              &:hover
+                background: none
+                color: $nw-red
+              &::after
+                display: none
+              &::before
+                display: none
+
