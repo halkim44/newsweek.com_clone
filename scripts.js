@@ -1,4 +1,5 @@
 window.onload = TopMenuMinimizer;
+window.onload = stickyElement;
 let hamburgerBtn = document.getElementById('js-hamburger-toggle')
 
 function mainMenuDisplayToggler(e) {
@@ -24,42 +25,17 @@ function TopMenuMinimizer() {
 document.addEventListener('scroll', TopMenuMinimizer)
 window.addEventListener('resize', TopMenuMinimizer)
 
-function stickyElement(e) { // if the bottom screen reach the the bottom of the sticky element
-  console.log(e);
+function stickyElement() { // if the bottom screen reach the the bottom of the sticky element
   let elements = document.querySelectorAll('.js-sticky'); // get all elements with sticky-nw
   elements.forEach(el => {
-    if (window.innerWidth >= 992) {
-
-      var parent = window.getComputedStyle(el.parentElement, null);
-      let parentSidePadding = parseInt(parent.getPropertyValue('padding-left')) + parseInt(parent.getPropertyValue('padding-right'));
-      let parentLeftPadding = parseInt(parent.getPropertyValue('padding-left'));
-
-      let scrollPosBottom = document.documentElement.scrollTop + window.innerHeight;
-      let elScrollPosBottom = el.parentElement.offsetTop + el.offsetHeight;
-
-      if (scrollPosBottom >= elScrollPosBottom) {
-        if (el.style.width === "" && el.style.left == "") {
-          el.style.width = `${el.parentElement.clientWidth - parentSidePadding}px`;
-          el.style.left = `${el.parentElement.offsetLeft + parentLeftPadding}px`;
-        }
-        el.style.position = 'fixed';
-        el.style.bottom = `0`;
-        if (scrollPosBottom >= el.parentElement.offsetTop + el.parentElement.clientHeight) {
-          el.style.position = 'relative';
-          el.style.bottom = `-${el.parentElement.clientHeight - el.clientHeight}px`
-          el.style.left = '';
-        }
-      } else {
-        el.style.width = '';
-        el.style.left = '';
-        el.style.position = '';
-        el.style.bottom = '';
-      }
+    let scrollPosBottom = document.documentElement.scrollTop + window.innerHeight;
+    let elScrollPosBottom = el.parentElement.offsetTop + el.offsetHeight;
+    if (scrollPosBottom >= elScrollPosBottom) {
+      el.style.position = 'sticky';
+      el.style.top = `-${el.offsetHeight - window.innerHeight}px`;
     } else {
-      el.style.width = '';
-      el.style.left = '';
       el.style.position = '';
-      el.style.bottom = '';
+      el.style.top = '';
     }
   });
 }
