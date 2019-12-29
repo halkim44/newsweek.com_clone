@@ -7,6 +7,12 @@
   &:hover
     text-decoration: none
 
+  &.nw-btn-sm
+    display: inline-block
+    font-size: 16px
+    padding: 0 7px
+    line-height: 26px
+
   &.nw-btn-red-bg
     color: #fff
     background-color: $nw-red
@@ -93,11 +99,6 @@
     padding: 0 !important
 .no-margin
   margin: 0 !important
-@media only screen and (min-width: 768px)
-  .no-padding-md
-    padding: 0 !important
-  .no-margin-md
-    margin: 0 !important
 
 .nw-articles
   .img-tags-wrapper
@@ -113,19 +114,6 @@
         top: 0
         bottom: 0
         width: 100%
-    .tags
-      position: absolute
-      bottom: 0
-      padding: 6px 12px
-      background: #ffffffe6
-      a
-        font-weight: 700
-        color: $nw-red
-        &:hover
-          text-decoration: none
-      &.blue
-        a
-          color: #3581f4
   h3
     font-size: 22px
     line-height: 24px
@@ -167,7 +155,20 @@
     &:hover
       background-color: #000
       color: #fff
-
+.tags
+  position: absolute
+  bottom: 0
+  left: 0
+  padding: 6px 12px
+  background: #ffffffe6
+  color: $nw-red
+  font-weight: 700
+  a
+    &:hover
+      text-decoration: none
+  &.blue
+    a
+      color: #3581f4
 .clearfix
   &::after
   content: ''
@@ -201,7 +202,14 @@
     line-height: 28px
     margin-bottom: 15px
     font-weight: bold
+.grey-bg
+  background-color: #f4f5f6
 @media only screen and (min-width: 768px)
+  .no-padding-md
+    padding: 0 !important
+  .no-margin-md
+    margin: 0 !important
+
   .nw-articles.nw-articles-img-float-left
     .img-tags-wrapper
       width: 135px

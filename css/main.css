@@ -19,6 +19,10 @@ a:hover {
           text-decoration: underline #f72210;
 }
 
+figure {
+  margin: 0;
+}
+
 .left, .right {
   padding: 0 16px;
 }
@@ -31,6 +35,13 @@ a:hover {
 
 .nw-btn:hover {
   text-decoration: none;
+}
+
+.nw-btn.nw-btn-sm {
+  display: inline-block;
+  font-size: 16px;
+  padding: 0 7px;
+  line-height: 26px;
 }
 
 .nw-btn.nw-btn-red-bg {
@@ -154,15 +165,6 @@ a:hover {
   margin: 0 !important;
 }
 
-@media only screen and (min-width: 768px) {
-  .no-padding-md {
-    padding: 0 !important;
-  }
-  .no-margin-md {
-    margin: 0 !important;
-  }
-}
-
 .nw-articles .img-tags-wrapper {
   position: relative;
   margin-bottom: 12px;
@@ -180,26 +182,6 @@ a:hover {
   top: 0;
   bottom: 0;
   width: 100%;
-}
-
-.nw-articles .img-tags-wrapper .tags {
-  position: absolute;
-  bottom: 0;
-  padding: 6px 12px;
-  background: #ffffffe6;
-}
-
-.nw-articles .img-tags-wrapper .tags a {
-  font-weight: 700;
-  color: #f72210;
-}
-
-.nw-articles .img-tags-wrapper .tags a:hover {
-  text-decoration: none;
-}
-
-.nw-articles .img-tags-wrapper .tags.blue a {
-  color: #3581f4;
 }
 
 .nw-articles h3 {
@@ -261,6 +243,24 @@ a:hover {
   color: #fff;
 }
 
+.tags {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 6px 12px;
+  background: #ffffffe6;
+  color: #f72210;
+  font-weight: 700;
+}
+
+.tags a:hover {
+  text-decoration: none;
+}
+
+.tags.blue a {
+  color: #3581f4;
+}
+
 .clearfix {
   content: '';
   display: block;
@@ -307,7 +307,17 @@ a:hover {
   font-weight: bold;
 }
 
+.grey-bg {
+  background-color: #f4f5f6;
+}
+
 @media only screen and (min-width: 768px) {
+  .no-padding-md {
+    padding: 0 !important;
+  }
+  .no-margin-md {
+    margin: 0 !important;
+  }
   .nw-articles.nw-articles-img-float-left .img-tags-wrapper {
     width: 135px;
   }
@@ -321,6 +331,10 @@ a:hover {
   margin: 0 auto;
   margin-top: 50px;
   max-width: 1310px;
+}
+
+.main-news-wrapper ~ section {
+  margin-bottom: 50px;
 }
 
 /* **START OF TOP MENU** */
@@ -556,13 +570,12 @@ a:hover {
   height: 100%;
 }
 
-.conversation-main > * {
-  height: 100%;
+.conversation-main figure {
+  min-height: 295px;
 }
 
 .conversations-other {
   /* **START OF MAGAZINE PREVIEW**  */
-  /* **END OF MAGAZINE PREVIEW**  */
 }
 
 .conversations-other .conversation-block .conversation-block__texts {
@@ -582,6 +595,133 @@ a:hover {
   border-top-width: 8px;
   border-bottom-width: 8px;
   border-left-width: 12px;
+}
+
+.magazine-cover figure {
+  position: relative;
+}
+
+.magazine-cover img {
+  width: 100%;
+}
+
+.magazine-cover > a {
+  text-align: center;
+  padding: 10px 12px;
+  font-weight: bold;
+  display: block;
+  background-color: #f4f5f6;
+}
+
+.magazine-block {
+  margin-bottom: 12px;
+  /* **END OF MAGAZINE PREVIEW**  */
+  /* **START OF NW PRODUCTS**  */
+}
+
+.magazine-block picture {
+  display: block;
+  position: relative;
+  height: 0;
+  padding-bottom: 60%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.magazine-block picture img {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.magazine-block .categories {
+  margin-bottom: 10px;
+}
+
+.magazine-block .categories > span {
+  position: relative;
+}
+
+.magazine-block h4 {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+#nw-products h2 {
+  font-size: 16px;
+  color: #f72210;
+  font-weight: 700;
+}
+
+#nw-products .subscribe-product-wrapper {
+  padding: 24px 20px 20px;
+}
+
+#nw-products .mag-covers-wrapper {
+  width: 170px;
+  margin: 0 auto;
+  position: relative;
+  padding-right: 90px;
+  padding-bottom: 13px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+#nw-products .mag-cover-thumb img {
+  width: 100%;
+}
+
+#nw-products .current-cover {
+  width: 170px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#nw-products .nw-product-info {
+  text-align: center;
+}
+
+#nw-products .nw-product-info h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#nw-products .nw-product-info h3, #nw-products .nw-product-info p {
+  margin: 20px 0;
+}
+
+#nw-products .nw-product-info a {
+  display: inline-block;
+}
+
+#nw-products #newsletter .nw-product-img-wrapper {
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+}
+
+#nw-products #newsletter .nw-product-img-wrapper img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#nw-products #newsletter .nw-product-info {
+  padding: 20px;
+}
+
+#nw-products #newsletter .row {
+  border: 1px solid #eee;
+}
+
+#newsletter, #subscribe {
+  margin-bottom: 30px;
+  /* **END OF NW PRODUCTS**  */
 }
 
 @media only screen and (max-width: 480px) {
@@ -607,6 +747,26 @@ a:hover {
   }
   .main-news-wrapper .right {
     margin-bottom: 0;
+  }
+  #nw-magazine-preview picture {
+    padding-bottom: 100%;
+  }
+  #nw-magazine-preview h4 {
+    font-size: 20px;
+  }
+  #nw-products .nw-product-info {
+    text-align: left;
+  }
+  #nw-products #newsletter .nw-product-img-wrapper {
+    height: 100%;
+  }
+  #nw-products #newsletter .nw-product-img-wrapper img {
+    height: 100%;
+    width: auto;
+    left: 50%;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 
